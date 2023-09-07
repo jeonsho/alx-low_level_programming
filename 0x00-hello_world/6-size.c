@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Entry point 
+ * main -Entry point
  * the computer it is compiled and run on.
  * Return: always 0 (success)
  */
