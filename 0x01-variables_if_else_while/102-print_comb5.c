@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int i, j, first_digit1, second_digit1;
+	int i, j, first_digit1, second_digit1,first_digit2, second_digit2;
 
 	for (i = 0; i <= 99; i++)
 	{
