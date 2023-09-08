@@ -4,7 +4,7 @@
 
 /**
  *main - prints the according number
- *Return : Always (success)
+ *Return: Always (success)
  */
 
 int main(void)
