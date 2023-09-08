@@ -1,35 +1,29 @@
 #include <stdio.h>
 
 /**
- *main - Entry point 
+ *main - Entry point
  *Return: Always 0(Success)
  */
 
 int main(void)
 {
-	int i, j, first_digit1, second_digit1,first_digit2, second_digit2;
+	int num1, num2;
 
-	for (i = 0; i <= 99; i++)
+	for (num1 = 0; num1 <= 98; num1++)
 	{
-		first_digit1 = i / 10;
-		second_digit1 = i % 10;
-
-		for (j = i; j <= 99; j++)
+		for (num2 = num1 + 1; num2 <= 99; num2++)
 		{
-			first_digit2 = j / 10;
-			second_digit2 = j % 10;
-
-			putchar('0' + first_digit1);
-			putchar('0' + second_digit1);
+			putchar((num1 / 10) + '0');
+			putchar((num1 % 10) + '0');
 			putchar(' ');
-			putchar('0' + first_digit2);
-			putchar('0' + second_digit2);
+			putchar((num2 / 10) + '0');
+			putchar((num2 % 10) + '0');
 
-			if (i != 99 || j != 99)
-			{
-				putchar(',');
-				putchar(' ');
-			}
+			if (num1 == 98 && num2 == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
 	}
 
@@ -37,5 +31,4 @@ int main(void)
 
 	return (0);
 }
-
 
