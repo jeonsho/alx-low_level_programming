@@ -2,7 +2,7 @@
 #include "6-abs.c"
 #include <stdio.h>
 /**
- * print_times_table - whatever man
+ * print_to_98 - whatever man
  *@n: integer to put in this table
  *
  */
