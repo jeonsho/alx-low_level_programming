@@ -9,7 +9,7 @@
 */
 
 int convert_day(int month, int day)
-	{
+{
 		switch (month)
 		{
 			case 2:
@@ -48,6 +48,5 @@ int convert_day(int month, int day)
 			default:
 				break;
 		}
-
 		return (day);
-	}
+}
