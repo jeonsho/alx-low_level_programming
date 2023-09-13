@@ -25,4 +25,12 @@ void print_remaining_days(int month, int day, int year);
 * @year: year
 * Return: void
 */
+int convert_day(int month, int day);
+/**
+* convert_day - converts day of month to day of year, without accounting
+* for leap year
+* @month: month in number format
+* @day: day of month
+* Return: day of year
+*/
 #endif /* MAIN_H */
