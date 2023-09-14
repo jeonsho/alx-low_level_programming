@@ -13,7 +13,7 @@ int main(void)
 
 	int inc;
 
-	while (inc++<number / 2)
+	while (inc++ < number / 2)
 	{
 		if (number % inc == 0)
 		{
