@@ -5,13 +5,12 @@
  *@str: pointer to the string to print
  */
 void _puts(char *str)
-{
-	int i;
-
-	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
+		while (*str != '\0')
+{
+		putchar(*str);
+		str++;
 	}
 
-	_putchar('\n');
-}
+	putchar('\n');
+	}
