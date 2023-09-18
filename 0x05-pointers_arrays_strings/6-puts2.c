@@ -5,7 +5,6 @@
  *followed by a new line
  *@str: string to print the chars from
  */
-
 void puts2(char *str)
 {
 	int i;
@@ -13,10 +12,10 @@ void puts2(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		_putchar(str[i]);
+		putchar(str[i]);
 		i += 2;
 	}
 
-	_putchar('\n');
+	putchar('\n');
 }	
 	
