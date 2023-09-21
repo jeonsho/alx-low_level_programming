@@ -7,7 +7,7 @@
  *@n: This is the number of bytes to copy
  *
  *Return: Copied string with the number of bytes
- */
+*/
 
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -18,11 +18,10 @@ char *_strncpy(char *dest, char *src, int n)
 		dest[i] = src[i];
 	}
 
-	for ( i < n; i++)
+	for (; i < n; i++)
 	{
 		dest[i] = '\0';
 	}
 
 	return (dest);
 }
-
