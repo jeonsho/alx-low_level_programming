@@ -3,9 +3,7 @@
 /**
  *string_toupper - a function that changes all lowercase letters of a
  *string to uppercase.
- *
- *@hi: This is the input string
- *
+ *@s: This is the input string
  *Return: Lowercase changed to uppercase of the string
  */
 
