@@ -15,6 +15,7 @@ char *cap_string(char *s)
 		'?', '"', '(', ')', '{', '}', '\t', '\n', '\0' };
 
 	n = 32;
+
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] >= 'i' && s[i] <= 'z')
@@ -32,6 +33,5 @@ char *cap_string(char *s)
 			}
 		}
 	}
-
 	return (s);
 }
