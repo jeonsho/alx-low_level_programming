@@ -24,6 +24,7 @@ char *cap_string(char *s)
 		}
 
 		n = 0;
+
 		for (j = 0; chars[j] != '\0'; j++)
 		{
 			if (chars[j] == s[i])
