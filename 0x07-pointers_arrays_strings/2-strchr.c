@@ -7,17 +7,16 @@
  *
  *Return: char with result
  */
-char *_strchr(char *s, char c)
-{
-	unsigned int i = 0;
-
-	while (s[i] != c && s[i] != '\0')
+char *_strchr(char *s, char c) {
+    while (*s != '\0') 
+    {
+        if (*s == c) 
 	{
-		i++;
-	}
+            return (s); 
+        }
 
-	if (s[i] == c)
-		return (s + i);
-	else
-		return (NULL);
+        s++; 
+    }
+    
+    return (NULL);
 }
