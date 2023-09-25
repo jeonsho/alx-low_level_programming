@@ -10,6 +10,7 @@
 char *_strpbrk(char *s, char *accept)
 {
 	int i, j;
+
 	if (*s == '\0' || *accept == '\0')
 		return (NULL);
 	for (i = 0; s[i] != '\0' ; i++)
