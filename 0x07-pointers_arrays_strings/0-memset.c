@@ -6,14 +6,13 @@
  * @s: A pointer to the memory area to be filled.
  * @b: The constant byte that will be used to fill the memory.
  * @n: The number of bytes to fill with the constant byte.
- *
  * Return: pointer to the memory area s
  */
 char *_memset(char *s, char b, unsigned int n)
 {
 	int i;
 
-	for (i = 0; i < n; i++)
+	for (i = n - 1; i >= 0; i--)
 	{
 		s[i] = b;
 	}
