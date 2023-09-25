@@ -23,7 +23,7 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 
-		if (m)
+		if (m == 1)
 		{
 			count++;
 			j++;
