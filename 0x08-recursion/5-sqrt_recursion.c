@@ -8,7 +8,7 @@
  *
  *Return: the natural square root
  */
-
+int my_sqrt(int n, int i);
 int my_sqrt(int n, int i)
 {
 	int sq = i * i;
