@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 /**
 *main - adds positive numbers
 *@argc: number of arguments
