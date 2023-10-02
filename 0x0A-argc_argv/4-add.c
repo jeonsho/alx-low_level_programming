@@ -1,17 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- *main - Entry point of the program
- *@argc: Number of command-line arguments
- *@argv: Array of command-line argument strings
- *Return:
- *  - 0: The program executed successfully.
- *  - 1: An error occurred, such as non-digit input or negative numbers.
- */
+*main - adds positive numbers
+*@argc: number of arguments
+*@argv: array of arguments
+*Return: 0 on success, 1 on failure
+*/
+
 int main(int argc, char *argv[])
 {
-	int sum = 0, int i;
+	int sum = 0;
+	int i;
 
 	if (argc < 2)
 	{
@@ -21,11 +20,11 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			char *endptr;
+			int num;
 
-			long num = strtol(argv[i], &endptr, 10);
+			num = atoi(argv[i]);
 
-			if (*endptr != '\0' || num < 0)
+			if (num == 0 && argv[i][0] != '0')
 			{
 				printf("Error\n");
 				return (1);
@@ -36,6 +35,5 @@ int main(int argc, char *argv[])
 
 		printf("%d\n", sum);
 	}
-
 	return (0);
 }
