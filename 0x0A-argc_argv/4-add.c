@@ -15,25 +15,25 @@ int main(int argc, char *argv[])
 	if (argc < 2)
 	{
 		printf("0\n");
-		return (0);
 	}
-
-	for (i = 1; i < argc; i++)
+	else
 	{
-		int num;
-
-		num = atoi(argv[i]);
-
-		if (num == 0 && argv[i][0] != '0')
+		for (i = 1; i < argc; i++)
 		{
-			printf("Error\n");
-			return (1);
+			int num;
+
+			num = atoi(argv[i]);
+
+			if (num == 0 && argv[i][0] != '0')
+			{
+				printf("Error\n");
+				return (1);
+			}
+
+			sum += num;
 		}
 
-		sum += num;
+		printf("%d\n", sum);
 	}
-
-	printf("%d\n", sum);
-
 	return (0);
 }
