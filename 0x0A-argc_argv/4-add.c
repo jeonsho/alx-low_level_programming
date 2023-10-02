@@ -23,7 +23,15 @@ int main(int argc, char *argv[])
 		for (i = 1; i < argc; i++)
 		{
 			int num;
-
+			char *find_letter = argv[i];
+		
+			while (*find_letter != '\0') {
+				if (*find_letter < '0' || *find_letter > '9') {
+					printf("Error\n");
+					return 1;
+				}
+				find_letter++;
+			}
 			num = atoi(argv[i]);
 
 			if (num == 0 && argv[i][0] != '0')
