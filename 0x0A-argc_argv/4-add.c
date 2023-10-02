@@ -24,11 +24,13 @@ int main(int argc, char *argv[])
 		{
 			int num;
 			char *find_letter = argv[i];
-		
-			while (*find_letter != '\0') {
-				if (*find_letter < '0' || *find_letter > '9') {
+
+			while (*find_letter != '\0')
+			{
+				if (*find_letter < '0' || *find_letter > '9')
+				{
 					printf("Error\n");
-					return 1;
+					return (1);
 				}
 				find_letter++;
 			}
