@@ -11,7 +11,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int sum = 0;
+	int sum = 0, int i;
 
 	if (argc < 2)
 	{
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		for (int i = 1; i < argc; i++)
+		for (i = 1; i < argc; i++)
 		{
 			char *find_letter = argv[i];
 
