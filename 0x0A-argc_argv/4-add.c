@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 
 			while (*find_letter != '\0')
 			{
-				if (*find_letter<'0' || *find_letter > '9')
+				if (*find_letter < '0' || *find_letter > '9')
 				{
 					printf("Error\n");
 					return (1);
