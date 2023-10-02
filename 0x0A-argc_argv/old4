@@ -1,9 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+*main - adds positive numbers
+*@argc: number of arguments
+*@argv: array of arguments
+*Return: 0 on success, 1 on failure
+*/
 
 int main(int argc, char *argv[])
 {
-	int sum = 0, int i;
+	int sum = 0;
+	int i;
 
 	if (argc < 2)
 	{
@@ -13,19 +20,20 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			char *endptr;
-			long num = strtol(argv[i], &endptr, 10);
-			if (*endptr != '\0' || num < 0)
+			int num;
+
+			num = atoi(argv[i]);
+
+			if (num == 0 && argv[i][0] != '0')
 			{
 				printf("Error\n");
 				return (1);
 			}
 
-			sum += (int) num;
+			sum += num;
 		}
 
 		printf("%d\n", sum);
 	}
-
 	return (0);
 }
