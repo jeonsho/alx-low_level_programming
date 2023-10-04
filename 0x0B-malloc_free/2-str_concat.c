@@ -6,8 +6,10 @@
  *@s1: first input string
  *@s2: second input string
  *
- *Return: returns NULL on failure
+ *Return: returns NULL on failer
  */
+#include <stdio.h>
+#include <stdlib.h>
 
 char *str_concat(char *s1, char *s2)
 {
@@ -28,13 +30,15 @@ char *str_concat(char *s1, char *s2)
 
 	while (s1[len1] != '\0')
 		len1++;
+
 	while (s2[len2] != '\0')
 		len2++;
 
-	str = (char *) malloc((len1 + len2 + 1) * sizeof(char));
+	str = (char *) malloc((len1 + len2 + 2) * sizeof(char));
 
 	if (str == NULL)
-		return (NULL);
+		return NULL;
+
 	i = 0;
 
 	while (i < len1)
@@ -42,6 +46,9 @@ char *str_concat(char *s1, char *s2)
 		str[i] = s1[i];
 		i++;
 	}
+
+	str[i] = ' ';
+	i++;
 
 	j = 0;
 
@@ -51,6 +58,7 @@ char *str_concat(char *s1, char *s2)
 		j++;
 	}
 
-	str[i] = '\0';
+	str[i + j] = '$';
+	str[i + j + 1] = '\0';
 	return (str);
 }
