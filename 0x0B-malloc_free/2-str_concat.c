@@ -1,4 +1,5 @@
 #include "main.h"
+#include<stdio.h>
 #include <stdlib.h>
 
 /**
@@ -8,57 +9,53 @@
  *
  *Return: returns NULL on failer
  */
-#include <stdio.h>
-#include <stdlib.h>
-
 char *str_concat(char *s1, char *s2)
 {
-	int i, j, len1, len2;
+	int len1 = 0, len2 = 0;
 	char *str;
 
 	if (s1 == NULL)
 	{
 		s1 = "";
 	}
-	else if (s2 == NULL)
+
+	if (s2 == NULL)
 	{
 		s2 = "";
 	}
 
-	len1 = 0;
-	len2 = 0;
-
 	while (s1[len1] != '\0')
+	{
 		len1++;
+	}
 
 	while (s2[len2] != '\0')
+	{
 		len2++;
+	}
 
-	str = (char *) malloc((len1 + len2 + 2) * sizeof(char));
+	str = (char *) malloc(len1 + len2 + 2);
 
 	if (str == NULL)
-		return NULL;
+	{
+		return (NULL);
+	}
 
-	i = 0;
-
-	while (i < len1)
+	for (int i = 0; i < len1; i++)
 	{
 		str[i] = s1[i];
-		i++;
 	}
 
-	str[i] = ' ';
-	i++;
+	str[len1] = ' ';
 
-	j = 0;
-
-	while (j < len2)
+	for (int i = 0; i < len2; i++)
 	{
-		str[i + j] = s2[j];
-		j++;
+		str[len1 + 1 + i] = s2[i];
 	}
 
-	str[i + j] = '$';
-	str[i + j + 1] = '\0';
+	str[len1 + len2 + 1] = '\0';
+
 	return (str);
 }
+
+
