@@ -9,7 +9,7 @@
 int *array_range(int min, int max)
 {
 	int *block;
-	int i, j, total;
+	int i, j = 0, total;
 
 	if (min > max)
 	{
@@ -23,9 +23,10 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	for (i = 0; j = min; j <= max; j++; i++)
+	for (i = min;i <= max; i++)
 	{
 		block[i] = j;
+		j++;
 	}
 
 	return (block);
