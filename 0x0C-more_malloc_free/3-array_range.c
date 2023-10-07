@@ -17,15 +17,14 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
+	total = max - min;
+
 	block = malloc((total + 1) * sizeof(int));
 
 	if (block == NULL)
 	{
 		return (NULL);
 	}
-	else
-	{
-
 	for (i = min;i <= max; i++)
 	{
 		block[j] = i;
@@ -33,5 +32,5 @@ int *array_range(int min, int max)
 	}
 
 	return (block);
-	}
+	
 }
