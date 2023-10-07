@@ -1,4 +1,5 @@
 #include "main.h"
+#include <string.h>
 
 /**
 * array_range - creates an array of integers
@@ -22,6 +23,8 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
+	else
+	{
 
 	for (i = min;i <= max; i++)
 	{
@@ -30,4 +33,5 @@ int *array_range(int min, int max)
 	}
 
 	return (block);
+	}
 }
