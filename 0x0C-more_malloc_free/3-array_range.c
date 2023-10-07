@@ -25,12 +25,11 @@ int *array_range(int min, int max)
 	{
 		return (NULL);
 	}
-	for (i = min;i <= max; i++)
+	for (i = min; i <= max ; i++)
 	{
 		block[j] = i;
 		j++;
 	}
 
 	return (block);
-	
 }
