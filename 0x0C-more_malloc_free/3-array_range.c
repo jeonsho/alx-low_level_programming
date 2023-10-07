@@ -25,7 +25,7 @@ int *array_range(int min, int max)
 
 	for (i = min;i <= max; i++)
 	{
-		block[i] = j;
+		block[j] = i;
 		j++;
 	}
 
