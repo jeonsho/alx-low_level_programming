@@ -30,7 +30,7 @@ char *_strdup(char *str)
  * @owner: owner of dog
  * Return: On success 1.
  */
-dog_t* new_dog(char *name, float age, char *owner)
+dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *new_dog;
 
