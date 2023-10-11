@@ -10,6 +10,7 @@
 int main(int argc, char *argv[])
 {
 	int (*f)(int, int);
+
 	if (f == NULL)
 	{
 		printf("Error\n");
@@ -17,7 +18,7 @@ int main(int argc, char *argv[])
 	}
 	if (argc != 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
 	f = get_op_func(argv[2]);
