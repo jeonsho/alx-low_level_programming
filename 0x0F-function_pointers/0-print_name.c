@@ -6,7 +6,7 @@
  *@f: function which print name
  *Return: nothing
  */
-void print_name(char *name, void(*f)(char*))
+void print_name(char *name, void(*f)(char *))
 {
 	if (name == NULL && f == NULL)
 		return;
