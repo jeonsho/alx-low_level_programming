@@ -92,6 +92,11 @@ void print_all(const char * const format, ...)
 			}
 			j++;
 		}
+		 if (j == 4) 
+		{
+			printf("\n");
+			break;
+        	}
 	i++;
 	}
 
