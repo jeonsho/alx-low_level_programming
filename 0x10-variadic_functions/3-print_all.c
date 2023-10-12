@@ -2,65 +2,100 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+
 /**
- *print_all - a function that prints anything.
- *c = char, i = int, f = float, s = char *(if null print (nil))
- *@format: list of arg types
- *Return: nothing
+ * op_c - Print character .
+ * @var: name va_list
+ *
+ * Return: Nothing.
  */
-void print_all(const char *const format, ...)
+
+void op_c(va_list var)
 {
-	va_list var;
+	printf("%c", va_arg(var, int));
+}
+/**
+ * op_i - Print Integer
+ * @var: name va_list
+ *
+ * Return: Nothing.
+ */
+
+void op_i(va_list var)
+{
+	printf("%i", va_arg(var, int));
+}
+/**
+ * op_f - print FLoat numbers
+ * @var: name of va_list
+ *
+ * Return: Nothing.
+ */
+
+void op_f(va_list var)
+{
+	printf("%f", va_arg(var, double));
+}
+/**
+ * op_s -print string
+ * @var: name va_list
+ *
+ * Return: Nothing.
+ */
+
+void op_s(va_list var)
+{
 	char *s;
-	int i;
-	float num;
-	char c;
-	int print = 0;
 
-	va_start(var, format);
-
-	while (*format)
+	s = va_arg(var, char *);
+	if (s == NULL)
 	{
-		if (*format == 'c' || *format == 'i' || *format == 'f' || *format == 's')
+		printf("(nil)");
+		return;
+	}
+	printf("%s", s);
+}
+
+/**
+ * print_all - a function that prints anything.
+ * @format: number of arguments in character format
+ *
+ * Return: Nothing.
+ */
+
+void print_all(const char * const format, ...)
+{
+
+	va_list all;
+	unsigned int i, j;
+	char *separator = "";
+
+	f ops[] = {
+		{"c", op_c},
+		{"i", op_i},
+		{"f", op_f},
+		{"s", op_s},
+		};
+
+	va_start(all, format);
+	i = 0;
+	while (format && format[i])
+	{
+		j = 0;
+		while (j < 4)
 		{
-			if (*format == 'c')
+			if (ops[j].op[0] == format[i])
 			{
-				c = (char) va_arg(var, int);
-				printf("%c", c);
+				printf("%s", separator);
+				separator = ", ";
+				ops[j].f(all);
+				break;
 			}
-			else if (*format == 'i')
-			{
-				i = va_arg(var, int);
-				printf("%d", i);
-			}
-			else if (*format == 'f')
-			{
-				num = (float) va_arg(var, double);
-				printf("%f", num);
-			}
-			else if (*format == 's')
-			{
-				s = va_arg(var, char *);
-				if (s == NULL)
-				{
-					printf("(nil)");
-				}
-				else
-				{
-					printf("%s", s);
-				}
-			}
-
-			if (*(format + 1))
-			{
-				printf(", ");
-			}
+			j++;
 		}
-
-		format++;
+	i++;
 	}
 
 	printf("\n");
-
-	va_end(var);
+	va_end(all);
 }
