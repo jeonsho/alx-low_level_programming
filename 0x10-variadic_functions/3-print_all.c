@@ -70,7 +70,7 @@ void print_all(const char * const format, ...)
 	unsigned int i, j;
 	char *separator = "";
 
-	ops[] = {
+	f ops[] = {
 		{"c", op_c},
 		{"i", op_i},
 		{"f", op_f},
