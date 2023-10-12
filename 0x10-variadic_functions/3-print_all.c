@@ -52,7 +52,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int i, j;
 	va_list args;
-	char *sep;
+	char *p;
 
 	checker storage[] = {
 		{ "c", _printchar },
@@ -62,16 +62,16 @@ void print_all(const char * const format, ...)
 	};
 
 	i = 0;
-	sep = "";
+	p = "";
 	va_start(args, format);
 	while (format != NULL && format[i / 4] != '\0')
 	{
 		j = i % 4;
 		if (storage[j].type[0] == format[i / 4])
 		{
-			printf("%s", sep);
+			printf("%s", p);
 			storage[j].f(args);
-			sep = ", ";
+			p = ", ";
 		}
 		i++;
 	}
