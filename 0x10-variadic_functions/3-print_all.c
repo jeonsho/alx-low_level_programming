@@ -2,25 +2,24 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
  * _printchar - print char type element from va_list
- * @var: va_list passed to function
+ * @list: va_list passed to function
  */
-void _printchar(va_list var)
+void _printchar(va_list list)
 {
-	printf("%c", va_arg(var, int));
+	printf("%c", va_arg(list, int));
 }
 
 /**
  * _printstr - print string element from va_list
- * @var: va_list passed to function
+ * @list: va_list passed to function
  */
-void _printstr(va_list var)
+void _printstr(va_list list)
 {
 	char *s;
 
-	s = va_arg(var, char *);
+	s = va_arg(list, char *);
 	if (s == NULL)
 		s = "(nil)";
 	printf("%s", s);
@@ -28,20 +27,20 @@ void _printstr(va_list var)
 
 /**
  * _printfloat - print float type element from va_list
- * @var: va_list passed to function
+ * @list: va_list passed to function
  */
-void _printfloat(va_list var)
+void _printfloat(va_list list)
 {
-	printf("%f", va_arg(var, double));
+	printf("%f", va_arg(list, double));
 }
 
 /**
  * _printint - print int type element from va_list
- * @var: va_list passed to function
+ * @list: va_list passed to function
  */
-void _printint(va_list var)
+void _printint(va_list list)
 {
-	printf("%d", va_arg(var, int));
+	printf("%d", va_arg(list, int));
 }
 
 /**
