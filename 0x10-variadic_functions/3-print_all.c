@@ -1,105 +1,79 @@
 #include "variadic_functions.h"
+#include <stdlib.h>
 #include <stdio.h>
-#include <stdarg.h>
 
 /**
- * op_c - Print character .
- * @var: name va_list
- *
- * Return: Nothing.
+ * _printchar - print char type element from va_list
+ * @var: va_list passed to function
  */
-
-void op_c(va_list var)
+void _printchar(va_list var)
 {
 	printf("%c", va_arg(var, int));
 }
-/**
- * op_i - Print Integer
- * @var: name va_list
- *
- * Return: Nothing.
- */
 
-void op_i(va_list var)
-{
-	printf("%i", va_arg(var, int));
-}
 /**
- * op_f - print FLoat numbers
- * @var: name of va_list
- *
- * Return: Nothing.
+ * _printstr - print string element from va_list
+ * @var: va_list passed to function
  */
-
-void op_f(va_list var)
-{
-	printf("%f", va_arg(var, double));
-}
-/**
- * op_s -print string
- * @var: name va_list
- *
- * Return: Nothing.
- */
-
-void op_s(va_list var)
+void _printstr(va_list var)
 {
 	char *s;
 
 	s = va_arg(var, char *);
 	if (s == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
+		s = "(nil)";
 	printf("%s", s);
 }
 
 /**
- * print_all - a function that prints anything.
- * @format: number of arguments in character format
- *
- * Return: Nothing.
+ * _printfloat - print float type element from va_list
+ * @var: va_list passed to function
  */
+void _printfloat(va_list var)
+{
+	printf("%f", va_arg(var, double));
+}
 
+/**
+ * _printint - print int type element from va_list
+ * @var: va_list passed to function
+ */
+void _printint(va_list var)
+{
+	printf("%d", va_arg(var, int));
+}
+
+/**
+ * print_all - print anything passed if char, int, float, or string.
+ * @format: string of formats to use and print
+ */
 void print_all(const char * const format, ...)
 {
-
-	va_list all;
 	unsigned int i, j;
-	char *separator = "";
+	va_list args;
+	char *sep;
 
-	f ops[] = {
-		{"c", op_c},
-		{"i", op_i},
-		{"f", op_f},
-		{"s", op_s},
-		};
+	checker storage[] = {
+		{ "c", _printchar },
+		{ "f", _printfloat },
+		{ "s", _printstr },
+		{ "i", _printint }
+	};
 
-	va_start(all, format);
 	i = 0;
-	while (format && format[i])
+	sep = "";
+	va_start(args, format);
+	while (format != NULL && format[i / 4] != '\0')
 	{
-		j = 0;
-		while (j < 4)
+		j = i % 4;
+		if (storage[j].type[0] == format[i / 4])
 		{
-			if (ops[j].op[0] == format[i])
-			{
-				printf("%s", separator);
-				separator = ", ";
-				ops[j].f(all);
-				break;
-			}
-			j++;
+			printf("%s", sep);
+			storage[j].f(args);
+			sep = ", ";
 		}
-		 if (j == 4) 
-		{
-			printf("\n");
-			break;
-        	}
-	i++;
+		i++;
 	}
-
 	printf("\n");
-	va_end(all);
+	va_end(args);
 }
