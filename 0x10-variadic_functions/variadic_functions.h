@@ -10,4 +10,16 @@ void op_c(va_list var);
 void op_i(va_list var);
 void op_f(va_list var);
 void op_s(va_list var);
+/**
+ * struct format - Data type of a format.
+ * @op: Format.
+ * @f: Function.
+ *
+ */
+
+typedef struct format
+{
+	char *op;
+	void (*f)(va_list all);
+} f;
 #endif
