@@ -10,13 +10,14 @@
  */
 void print_all(const char *const format, ...)
 {
-	va_list
-	var;
+	va_list var;
 	char *s;
 	int i;
 	float num;
 	char c;
 	int print = 0;
+
+	va_start(var, format);
 
 	while (*format)
 	{
