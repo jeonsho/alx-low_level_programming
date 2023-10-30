@@ -42,7 +42,13 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	close(input_file);
-	close(output_file);
+	if (close(input_file) == -1) {
+	  dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_file);
+	  exit(100);
+	}
+	if (close(output_file) == -1) {
+	  dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_file);
+	  exit(100);
+	}
 	return (0);
 }
