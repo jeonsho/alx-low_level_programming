@@ -1,9 +1,9 @@
 #include "main.h"
 #define BUFFER_SIZE 1024
 /**
- *main - Program that copies the content of a file to another file.
+ *main - Program that copies the content 
  *@argc: The number of command-line arguments.
- *@argv: An array of strings 
+ *@argv: An array of strings
  *Return: 0 on success.
  */
 int main(int argc, char *argv[])
