@@ -41,11 +41,11 @@ int main(int argc, char *argv[])
 		exit(98); }
 	if (close(input_file) < 0)
 	{
-	  dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_file);
-	  exit(100); }
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", input_file);
+		exit(100); }
 	if (close(output_file) < 0)
 	{
-	  dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_file);
-	  exit(100); }
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", output_file);
+		exit(100); }
 	return (0);
 }
