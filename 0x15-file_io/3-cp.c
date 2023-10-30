@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
 		close(input_file);
 		exit(99);
 	}
-	while ((bytes_read = read(input_file, buffer, sizeof(buffer))) > 0)
+	while ((bytes_read = read(input_file, buffer, sizeof(buffer))) != -1)
 	{
 		bytes_written = write(output_file, buffer, bytes_read);
 		if (bytes_written < bytes_read)
