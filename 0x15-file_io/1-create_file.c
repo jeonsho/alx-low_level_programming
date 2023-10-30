@@ -6,9 +6,6 @@
  *@text_content: The NULL-terminated string to write to the file.
  *Return: 1 on success, -1 on failure.
  */
-#include <fcntl.h>
-#include <unistd.h>
-
 int create_file(const char *filename, const char *text_content)
 {
 	int fdes, write_status;
