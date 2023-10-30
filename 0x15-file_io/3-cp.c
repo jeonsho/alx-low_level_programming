@@ -16,14 +16,12 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	input_file = open(argv[1], O_RDONLY);
-	if (input_file == -1)
+	if (input_file == -1 || argv[1] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	output_file = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC,
 		S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 	if (output_file == -1)
@@ -32,7 +30,6 @@ int main(int argc, char *argv[])
 		close(input_file);
 		exit(99);
 	}
-
 	while ((bytes_read = read(input_file, buffer, sizeof(buffer))) > 0)
 	{
 		bytes_written = write(output_file, buffer, bytes_read);
