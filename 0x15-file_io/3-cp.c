@@ -1,10 +1,9 @@
 #include "main.h"
-
 /**
- *main - program that copies the content of a file to another file
- *@argc: The number of command-line arguments
- *@argv: string argument
- *Return: 0
+ *main - Program that copies the content of a file to another file.
+ *@argc: The number of command-line arguments.
+ *@argv: An array of strings 
+ *Return: 0 on success.
  */
 int main(int argc, char *argv[])
 {
@@ -42,7 +41,10 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	close(input_file);
-	close(output_file);
+	if (close(input_file) == -1 || close(output_file) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file descriptor\n");
+		exit(100);
+	}
 	return (0);
 }
